@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">vremenska</string>
+    <string name="pon">Ponedeljak</string>
+    <string name="uto">Utorak</string>
+    <string name="sre">Sreda</string>
+    <string name="cet">Cetvrtak</string>
+    <string name="pet">Petak</string>
+    <string name="sub">Subota</string>
+    <string name="ned">Nedelja</string>
+    <string name="day">DAN :      </string>
+    <string name="temp">TEMPERATURA</string>
+    <string name="sunrise">IZLAZAK I ZALAZAK</string>
+    <string name="wind">VETAR</string>
+    <string name="tempdata1">Temperatura: 16</string>
+    <string name="tempdata2pres">Pritisak: 1000</string>
+    <string name="tempdata3hum">Vlaznost vazduha: 44</string>
+    <string name="hint">Izaberite jedinicu</string>
+    <string name="sunrisedata1">Izlazak sunca: 06:47</string>
+    <string name="sunrisedata2">Zalazak sunca: 17:45</string>
+    <string name="windata1">Brzina vetra: 4.7</string>
+    <string name="windata2">Brzina vetra: 4.7</string>
+    <string name="name">WEATHER FORECAST</string>
+    <string name="hintcity">Ime grada</string>
+    <string name="searchcity">PRETRAZI</string>
+    <string name="dodaj">DODAJ</string>
+    <string name="dugmic">dugmic</string>
+    <string name="ll">Niste nista uneli!</string>
+    <string name="warning1">Grad vec postoji u listi!</string>
+    <string name="warning2">Unesite grad u listu!</string>
+    <string name="lastweek">POSLEDNJA NEDELJA:</string>
+    <string name="mintemp">Minimalna temperatura:</string>
+    <string name="maxtemp">Maksimalna temperatura:</string>
+    <string name="statistika">STATISTIKA</string>
+    <string name="last_updated">last updated</string>
+    <string name="pritisak">PRITISAK</string>
+    <string name="stop_service">STOP SERVICE</string>
+
+</resources>
