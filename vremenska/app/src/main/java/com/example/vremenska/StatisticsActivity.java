@@ -124,21 +124,21 @@ public class StatisticsActivity extends AppCompatActivity implements View.OnClic
     }
     public void put(String day,Cursor cursor){
         if(day.equals(getString(R.string.pon))){
-            tPon.setText(getString(R.string.pon)+"                       "+cursor.getDouble(3)+"            "+cursor.getDouble(4)+"             "+cursor.getDouble(5));
+            tPon.setText(getString(R.string.pon)+"                 "+cursor.getDouble(3)+"            "+cursor.getDouble(4)+"                       "+cursor.getDouble(5));
         }else if(day.equals(getString(R.string.uto))){
             Log.d("mesage", "UTORAKJEBENI");
-            tUto.setText(getString(R.string.uto)+"                       "+cursor.getDouble(3)+"          "+cursor.getDouble(4)+"             "+cursor.getDouble(5));
+            tUto.setText(getString(R.string.uto)+"                        "+cursor.getDouble(3)+"             "+cursor.getDouble(4)+"                       "+cursor.getDouble(5));
         }else if(day.equals(getString(R.string.sre))){
             Log.d("mesage", "UTORAKJEBENI");
-            tSre.setText(getString(R.string.sre)+"                       "+cursor.getDouble(3)+"         "+cursor.getDouble(4)+"            "+cursor.getDouble(5));
+            tSre.setText(getString(R.string.sre)+"                         "+cursor.getDouble(3)+"             "+cursor.getDouble(4)+"                       "+cursor.getDouble(5));
         }else if(day.equals(getString(R.string.cet))){
-            tCet.setText(getString(R.string.cet)+"                       "+cursor.getDouble(3)+"           "+cursor.getDouble(4)+"              "+cursor.getDouble(5));
+            tCet.setText(getString(R.string.cet)+"                     "+cursor.getDouble(3)+"             "+cursor.getDouble(4)+"                       "+cursor.getDouble(5));
         }else if(day.equals(getString(R.string.pet))){
-            tPet.setText(getString(R.string.pet)+"                       "+cursor.getDouble(3)+"           "+cursor.getDouble(4)+"              "+cursor.getDouble(5));
+            tPet.setText(getString(R.string.pet)+"                          "+cursor.getDouble(3)+"             "+cursor.getDouble(4)+"                       "+cursor.getDouble(5));
         }else if(day.equals(getString(R.string.sub))){
-            tSub.setText(getString(R.string.sub)+"                       "+cursor.getDouble(3)+"          "+cursor.getDouble(4)+"             "+cursor.getDouble(5));
+            tSub.setText(getString(R.string.sub)+"                        "+cursor.getDouble(3)+"             "+cursor.getDouble(4)+"                       "+cursor.getDouble(5));
         }else{
-            tNed.setText(getString(R.string.ned)+"                       "+cursor.getDouble(3)+"            "+cursor.getDouble(4)+"              "+cursor.getDouble(5));
+            tNed.setText(getString(R.string.ned)+"                       "+cursor.getDouble(3)+"             "+cursor.getDouble(4)+"                       "+cursor.getDouble(5));
         }
     }
 

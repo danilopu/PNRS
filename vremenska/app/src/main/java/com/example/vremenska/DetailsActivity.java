@@ -45,7 +45,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
 
 
     public static String BASE_URL = "https://api.openweathermap.org/data/2.5/weather?q=";
-    public static String KEY = "&APPID=427edf80de13c683dda62f905bed47fc&units=metric";
+    public static String KEY = "&APPID=06a6b60ad3792c67573b953fde137dce&units=metric";
     public String GET_INFO;
     private HTTPHelper httpHelper;
     private DBHelper weather_helper;
@@ -131,7 +131,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
         stop_service = findViewById(R.id.stop_service);
         stop_service.setOnClickListener(this);
 
-        WeatherData data1 = new WeatherData("Ponedeljak","17.05.2019.", "Novi Sad", "22", "1024", "56", "12:13", "13:12", "65", "Sever");
+        WeatherData data1 = new WeatherData("Ponedeljak","16.05.2019.", "Novi Sad", "22", "1024", "56", "12:13", "13:12", "65", "Sever");
         Log.d("data1", data1.getLocation());
         weather_helper.insert(data1);
 
@@ -149,7 +149,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
         weather_helper.insert(data7);
 
 
-        WeatherData data11 = new WeatherData("Ponedeljak","17.05.2019.", "Paris", "22", "1024", "56", "12:13", "13:12", "65", "Sever");
+        WeatherData data11 = new WeatherData("Ponedeljak","16.05.2019.", "Paris", "22", "1024", "56", "12:13", "13:12", "65", "Sever");
         weather_helper.insert(data11);
         WeatherData data22 = new WeatherData("Utorak","17.05.2019.", "Paris", "21", "1024", "56", "12:13", "13:12", "65", "Sever");
         weather_helper.insert(data22);
@@ -331,9 +331,8 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
                     JSONObject windobject = jsonobject2.getJSONObject("wind");
 
                     final String wind_speed = windobject.get("speed").toString();
-
-                    double degree = windobject.getDouble("deg");
-                    final String wind_direction = windConverter(degree);
+                    /*double degree = windobject.getDouble("deg");
+                    final String wind_direction = windConverter(degree);*/
 
 
 
@@ -380,7 +379,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
                             time = Calendar.getInstance();
                             String[] days = new String[] {"Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota", "Nedelja"};
                             dan = days[time.get(Calendar.DAY_OF_WEEK) - 2];
-                            weatherData = new WeatherData(dan, data_time, grad, temp, pressure, humidity, sunset, sunrise, wind_speed, wind_direction);
+                            weatherData = new WeatherData(dan, data_time, grad, temp, pressure, humidity, sunset, sunrise, wind_speed, "sever");
 
 
                             WeatherData[] read_day = weather_helper.read_data_location(grad);
@@ -423,9 +422,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
                     @Override
                     public void run() {
 
-                        //Temperature.setText("Temperatura: " + temperature + " °C");
-                        //Pressuere.setText("Pritisak: " + pressure+ " hPA");
-                        //Humidity.setText("Vlažnost vazduha: " + humidity + " %");
+
 
                         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
@@ -451,15 +448,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
                                     tmp2.setText("Pritisak: " + read.getPressure() + " hPA");
                                     tmp3.setText("Vlažnost vazduha: " + read.getHumidity() + " %");
                                 }
-                                    /*double tempFarenhite = Double.parseDouble(temp);
-                                    tempFarenhite = tempFarenhite * (9/5) + 32;
-                                    int tempRound = (int)tempFarenhite;
-                                    String temperature = Integer.toString(tempRound);*/
-                                //Temperature.setText("Temperatura: " + temperature + " °F\nPritisak: " + pressure + " hPA" + "\nVlažnost vazduha: " + humidity + " %");
-                                //Sun_rise.setText("Izlazak sunca: " + sunrise);
-                                //Sun_set.setText("Zalazak sunca: " + sunset);
-                                //Wind_speed.setText("Brzina vetra: " + wind_speed + " m/s");
-                                //Wind_dir.setText("Pravac: " + wind_direction)
+
                             }
 
                             @Override
@@ -537,8 +526,9 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
 
                             final String wind_speed = windobject.get("speed").toString();
 
-                            double degree = windobject.getDouble("deg");
-                            final String wind_direction = windConverter(degree);
+                           /* double degree = windobject.getDouble("deg");
+                            Log.d("GLUPOST", "degree");
+                            final String wind_direction = windConverter(degree);*/
 
 
 
@@ -553,7 +543,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
                                     sunRise.setText("Izlazak sunca: " + sunrise);
                                     sunSet.setText("Zalazak sunca: " + sunset);
                                     windSpeed.setText("Brzina vetra: " + wind_speed + " m/s");
-                                    windDir.setText("Pravac: " + wind_direction);
+                                    windDir.setText("Pravac: " + "sever");
 
                                     dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
@@ -576,7 +566,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
                                                 sunRise.setText("Izlazak sunca: " + sunrise);
                                                 sunSet.setText("Zalazak sunca: " + sunset);
                                                 windSpeed.setText("Brzina vetra: " + wind_speed + " m/s");
-                                                windDir.setText("Pravac: " + wind_direction);
+                                                windDir.setText("Pravac: " + "sever");
                                             }
                                         }
 
@@ -594,7 +584,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
                                     String[] days = new String[] {"Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota", "Nedelja"};
                                     String dan = days[time.get(Calendar.DAY_OF_WEEK) - 2];
 
-                                    weatherData = new WeatherData( dan, data_time, grad, temp, pressure, humidity, sunset, sunrise, wind_speed, wind_direction);
+                                    weatherData = new WeatherData( dan, data_time, grad, temp, pressure, humidity, sunset, sunrise, wind_speed,"sever" );
                                     weather_helper.insert(weatherData);
 
                                     WeatherData read_data = weather_helper.readData(grad);
@@ -634,7 +624,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
 
 
 
-    protected  String windConverter(double degree) {
+    /*protected  String windConverter(double degree) {
         if (degree <= 22.5 && degree > 337.5) {
             return "Sever";
         }
@@ -657,7 +647,7 @@ public class DetailsActivity extends AppCompatActivity implements  View.OnClickL
             return "Zapad";
         }
         return "Severo-zapad";
-    }
+    }*/
 
     public ServiceConnection connection = new ServiceConnection() {
         @Override

@@ -210,9 +210,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/snow_stat"
+            android:id="@+id/sun_stat"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/snowflake"/>
+            android:background="@drawable/sun"/>
 
         <View
             android:layout_width="0dp"
@@ -227,8 +227,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="20dp"
-            android:id="@+id/sun_stat"
-            android:background="@drawable/sun"/>
+            android:id="@+id/snow_stat"
+            android:background="@drawable/snowflake"/>
 
     </LinearLayout>
 
